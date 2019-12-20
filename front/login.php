@@ -35,7 +35,11 @@ $("#login").on("click",function(){
             $.post("./api/chkpw.php",{acc, pw},function(chkpw){
                 if(chkpw === "1"){
                     alert("登入成功");
-                    location.href="index.php";
+                    if(acc == "admin"){
+                        location.href="admin.php";
+                    }else{
+                        location.href="index.php";
+                    }
                 }else{
                     alert("密碼錯誤");
                     $("#acc,#pw").val("");

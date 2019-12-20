@@ -6,8 +6,6 @@
 <link href="./css/css.css" rel="stylesheet" type="text/css">
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/js.js"></script>
-<script src="./js/SpryTabbedPanels.js" type="text/javascript"></script>
-<link href="./css/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -40,11 +38,7 @@
 								<button onclick="javascript:location.href='admin.php'">管理</button>
 								<button onclick="javascript:location.href='./api/logout.php'">登出</button>
 							<?php
-						}else{
-							echo "歡迎" . $_SESSION['user'];
-							?>
-							<button onclick="javascript:location.href='./api/logout.php'">登出</button>
-							<?php						}
+						}
 					}else{
 						echo "<a href='?do=login'>會員登入</a>";
 					}
@@ -54,11 +48,11 @@
 					<!-- 1.切版 加入 $do 三元運算子-->
 					<?php 
 					$do = (empty($_GET['do']))?"home":$_GET['do'];
-					$path = "./front/". $do .".php";
+					$path = "./admin/". $do .".php";
 					if(file_exists($path)){
 						include ($path);
 					}else{
-						include ("./front/home.php"); 
+						include ("./admin/home.php"); 
 					}
 					
 					?>
