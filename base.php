@@ -2,7 +2,7 @@
 
 //建立PDO
 $dsn="mysql:host=localhost;charset=utf8;dbname=db112";
-$pdo=new PDO($dsn,"root","123");
+$pdo=new PDO($dsn,"root","");
 
 //啟用session
 session_start();
